@@ -1,0 +1,14 @@
+
+
+.githubIcon {
+    background-color: white; 
+    border-radius: 45px; 
+}
+
+.links {
+    position: fixed;
+    bottom: 0; 
+    text-align: center;
+    color: #fff;
+    float: left; 
+}
