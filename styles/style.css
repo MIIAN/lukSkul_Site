@@ -52,7 +52,6 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    /* z-index: -1; (optional, depends on your layout) */
 }
 
 .container-effects {

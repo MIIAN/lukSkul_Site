@@ -1,14 +1,7 @@
-
-
-.githubIcon {
+.link-item {
+    margin: 0; 
+    height: 50px; 
+    width: 50px; 
     background-color: white; 
-    border-radius: 45px; 
-}
-
-.links {
-    position: fixed;
-    bottom: 0; 
-    text-align: center;
-    color: #fff;
-    float: left; 
+    border-radius: 50%; 
 }

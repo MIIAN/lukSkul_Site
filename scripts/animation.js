@@ -30,7 +30,7 @@ function message() {
         message = 'Market Blood Bath';
         bear(); 
     } else {
-        message = "Bull Market"
+        message = "Rise From the Ashes"
         bull()
     } 
     messageElement.textContent = message;
@@ -73,18 +73,21 @@ function bear() {
 };
 
 function bull() {
-
     function createAmber(className, speedMultiplier, movement) {
         const amber = document.createElement('div');
         amber.className = className;
         document.getElementById('ambers').appendChild(amber);
 
         const windowHeight = window.innerHeight;
-        const windowWidth = window.innerWidth;
     
         // Set initial position randomly within the window 
-        amber.style.left = `${Math.random() * windowWidth}px`;
-        amber.style.top = `${Math.random() * windowHeight}px`;
+    if (className === 'amber-2') {
+        amber.style.left =`${Math.random() * windowHeight}px`; 
+        amber.style.bottom = '0px'; 
+    } else {
+        amber.style.left = '0px'; 
+        amber.style.bottom = `${Math.random() * windowHeight/2}px`;
+    }
     
         // Set random size for a more natural appearance
         const size = Math.random() * 10 + 5; // Adjust the range as needed
@@ -93,38 +96,48 @@ function bull() {
     
         // Set random animation duration
         //const duration = 10;
+        //const duration = (Math.random() * 3 + 2) * (5 / size) * speedMultiplier;
         const duration = (Math.random() * 3 + 2) * (5 / size) * speedMultiplier;
-    
+        amber.style.animation = `${movement} ${duration}s linear infinite`;
+
         // Set random angle for diagonal movement
         const angle = Math.random() * 360;
     
         // Apply random animation
         amber.style.animation = `${movement} ${duration}s infinite`; 
     
-        // Adjust opacity for a glowing effect
-        amber.style.opacity = Math.random() * 0.7 + 0.3; // Adjust the range as needed
-    
-        // Set warm colors for a fire-like appearance
-        amber.style.backgroundColor = `rgba(255, ${Math.floor(Math.random() * 50)}, 0, 1)`;
-        amber.style.transform = `rotate(${angle}deg)`;
+    // Adjust opacity for a glowing effect
+    amber.style.opacity = Math.random() * 0.7 + 0.3; // Adjust the range as needed
+
+    // Set background color with grey and faint green hues
+    const greenHue = Math.floor(Math.random() * 50); // Adjust the range as needed
+    amber.style.backgroundColor = `rgb(255, 0, 0)`;
+
+    // Set warm colors for a fire-like appearance
+    amber.style.backgroundColor = `rgb(255, 165, 0)`;
+    amber.style.transform = `rotate(${angle}deg)`;
+
+            // Apply random animation
+    const timingFunction = movement === 'drift-up' ? 'ease-in' : 'linear';
+    amber.style.animation = `${movement} ${duration}s ${timingFunction} infinite`;
     }
     
-    
-    // Function to create multiple drops
+    // Function to create multiple ambers
     function createAmbers(count) {
-        const dropsContainer = document.getElementById('container-effects');
+        const amberContainer = document.getElementById('container-effects');
         for (let i = 0; i < count; i++) {
-            createAmber('amber-1', 1, 'drift'); 
+            createAmber('amber-1', 2.5, 'drift'); 
             createAmber('amber-2', 2, 'drift-up'); 
+            createAmber('amber-3', 3, 'drift-up'); 
         }
     }
     
     // Function to animate drops using requestAnimationFrame
     function animateAmbers() {
-        createAmbers(1)
+        createAmbers(2)
         setTimeout(() => {
-            requestAnimationFrame(animateDrops);
-        }, 1000);
+            requestAnimationFrame(animateAmbers);
+        }, 100000);
     } 
     
     // Initial call to start the animation

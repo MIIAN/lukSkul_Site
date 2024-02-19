@@ -39,6 +39,20 @@
     border-radius: 50%;
 }
 
+.amber-2 {
+    position: absolute; 
+    width: 4px; 
+    height: 4px; 
+    border-radius: 25%; 
+}
+
+.amber-3 {
+    position: absolute; 
+    width: 2px; 
+    height: 2px; 
+    border-radius: 75%; 
+}
+
 @keyframes dropFall {
     0% {
         opacity: 1;
@@ -56,12 +70,13 @@
 
 @keyframes drift {
     to {
-        transform: translateX(100vw) rotate(360deg);
+        transform: translateX(100vw) translateY(0) rotate(360deg);
     }
 }
+    
 
 @keyframes drift-up {
     to {
-        transform: translateY(-100vh) rotate(360deg);
+        transform: translateX(100vw) translateY(-50vh) rotate(360deg);
     }
 }
