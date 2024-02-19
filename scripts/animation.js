@@ -1,4 +1,4 @@
-const apiKey = 'agNnKSb35I4s1OsMICe1mZ5szK3F_9BP';
+const apiKey = 'agNnKSb35I4s1OsMICe1mZ5szK3F_9BP'; // These are free!! https://polygon.io
 const symbol = 'X:BTCUSD'; 
 const today = new Date();
 const year = today.getFullYear();
@@ -19,7 +19,6 @@ function checkMarket(startDate, endDate) {
     } 
     return marketTrend; 
 } 
-
 
 function message() {
     const messageContainer = document.getElementById('message');
@@ -79,8 +78,7 @@ function bull() {
         document.getElementById('ambers').appendChild(amber);
 
         const windowHeight = window.innerHeight;
-    
-        // Set initial position randomly within the window 
+
     if (className === 'amber-2') {
         amber.style.left =`${Math.random() * windowHeight}px`; 
         amber.style.bottom = '0px'; 
@@ -89,40 +87,28 @@ function bull() {
         amber.style.bottom = `${Math.random() * windowHeight/2}px`;
     }
     
-        // Set random size for a more natural appearance
-        const size = Math.random() * 10 + 5; // Adjust the range as needed
+        const size = Math.random() * 10 + 5; 
         amber.style.width = `${size}px`;
         amber.style.height = `${size}px`;
     
-        // Set random animation duration
-        //const duration = 10;
-        //const duration = (Math.random() * 3 + 2) * (5 / size) * speedMultiplier;
         const duration = (Math.random() * 3 + 2) * (5 / size) * speedMultiplier;
         amber.style.animation = `${movement} ${duration}s linear infinite`;
 
-        // Set random angle for diagonal movement
         const angle = Math.random() * 360;
     
-        // Apply random animation
         amber.style.animation = `${movement} ${duration}s infinite`; 
     
-    // Adjust opacity for a glowing effect
-    amber.style.opacity = Math.random() * 0.7 + 0.3; // Adjust the range as needed
+    amber.style.opacity = Math.random() * 0.7 + 0.3; 
 
-    // Set background color with grey and faint green hues
-    const greenHue = Math.floor(Math.random() * 50); // Adjust the range as needed
+    const greenHue = Math.floor(Math.random() * 50); 
     amber.style.backgroundColor = `rgb(255, 0, 0)`;
 
-    // Set warm colors for a fire-like appearance
     amber.style.backgroundColor = `rgb(255, 165, 0)`;
     amber.style.transform = `rotate(${angle}deg)`;
 
-            // Apply random animation
     const timingFunction = movement === 'drift-up' ? 'ease-in' : 'linear';
     amber.style.animation = `${movement} ${duration}s ${timingFunction} infinite`;
     }
-    
-    // Function to create multiple ambers
     function createAmbers(count) {
         const amberContainer = document.getElementById('container-effects');
         for (let i = 0; i < count; i++) {
@@ -131,21 +117,14 @@ function bull() {
             createAmber('amber-3', 3, 'drift-up'); 
         }
     }
-    
-    // Function to animate drops using requestAnimationFrame
     function animateAmbers() {
         createAmbers(2)
         setTimeout(() => {
             requestAnimationFrame(animateAmbers);
         }, 100000);
-    } 
-    
-    // Initial call to start the animation
+    }   
     animateAmbers();
-
 };
-
-
 
 window.addEventListener('DOMContentLoaded', function() {
     fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/${startDate}/${endDate}?apiKey=${apiKey}`)

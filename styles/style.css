@@ -1,17 +1,9 @@
 @font-face {
     font-family: 'Red Smoke';
-    src: url('../fonts/RedSmoke.woff') format('woff2'), /* Modern Browsers */
-         url('../fonts/RedSmoke.woff') format('woff'); /* Older Browsers */
+    src: url('../fonts/RedSmoke.woff') format('woff2'), 
+         url('../fonts/RedSmoke.woff') format('woff'); 
     font-weight: normal;
     font-style: normal;
-}
-
-h1 {
-    font-family: 'Red Smoke', sans-serif;
-    font-size: 48px;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
-    margin-bottom: 20px;
 }
 
 .title {
@@ -20,11 +12,6 @@ h1 {
     letter-spacing: 3mm;
     color: #fff;
     text-shadow: 2px 2px 4px #000;
-}
-
-p {
-    font-size: 24px;
-    line-height: 1.5;
 }
 
 body {
@@ -68,7 +55,6 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    /* z-index: -2; (optional, depends on your layout) */
 }
 
 #container-effects {
@@ -79,7 +65,14 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: #000;
-    /* z-index: (optional, depends on your layout) */
+}
+
+.link-item {
+    margin: 0; 
+    height: 50px; 
+    width: 50px; 
+    background-color: white; 
+    border-radius: 50%; 
 }
 
 

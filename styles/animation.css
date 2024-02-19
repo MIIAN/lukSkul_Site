@@ -1,4 +1,4 @@
-
+/* 
 .rain {
     position: absolute;
     width: 2px;
@@ -15,27 +15,26 @@
     to {
         transform: translateY(250%);
     }
-}
+} */
 
-/* Style for drop class */
 .drop-1 {
     position: absolute;
-    width: 5px; /* Adjust size */
-    height: 5px; /* Adjust size */
+    width: 5px; 
+    height: 5px; 
     border-radius: 50%;
 }
 
 .drop-2 {
     position: absolute;
-    width: 5px; /* Adjust size */
-    height: 5px; /* Adjust size */
+    width: 5px;
+    height: 5px; 
     border-radius: 50%;
 }
 
 .amber-1 {
     position: absolute;
-    width: 5px; /* Adjust size */
-    height: 5px; /* Adjust size */
+    width: 5px; 
+    height: 5px; 
     border-radius: 50%;
 }
 
@@ -60,11 +59,11 @@
     }
     50% {
         opacity: 0.5;
-        transform: translateY(20vh); /* Adjust the distance drops fall */
+        transform: translateY(20vh); 
     }
     100% {
         opacity: 0;
-        transform: translateY(40vh); /* Adjust the distance drops fall */
+        transform: translateY(40vh); 
     }
 }
 
@@ -74,7 +73,6 @@
     }
 }
     
-
 @keyframes drift-up {
     to {
         transform: translateX(100vw) translateY(-50vh) rotate(360deg);
